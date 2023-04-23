@@ -10,9 +10,9 @@ ARG AIRFLOW_HOME=/opt/airflow
 ENV AIRFLOW_HOME=${AIRFLOW_HOME}
 
 # Install dependencies and tools
-RUN sudo apt-get update -y && \
-    sudo apt-get upgrade -yqq && \
-    sudo apt-get install -yqq --no-install-recommends \
+RUN apt-get update -y && \
+    apt-get upgrade -yqq && \
+    apt-get install -yqq --no-install-recommends \
     python3-dev \
     wget \
     libczmq-dev \
@@ -33,7 +33,7 @@ RUN sudo apt-get update -y && \
     gcc \
     vim \
     netcat \
-    && sudo apt-get autoremove -yqq --purge && sudo apt-get clean
+    && apt-get autoremove -yqq --purge && apt-get clean
 
 # Upgrade pip
 # Create airflow user 
